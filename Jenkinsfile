@@ -32,6 +32,7 @@ pipeline {
             steps {
                 sh 'kubectl apply -f deployment.yaml'
                 sh 'kubectl apply -f service.yaml'
+                sh 'kubectl rollout restart deployment/devops-demo-deployment'
             }
         }
         stage('Verify') {
